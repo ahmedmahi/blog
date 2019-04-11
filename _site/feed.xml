@@ -3,10 +3,10 @@
   <channel>
     <title></title>
     <description>Web - E-commerce - Mobile </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 11 Apr 2019 18:52:35 +0100</pubDate>
-    <lastBuildDate>Thu, 11 Apr 2019 18:52:35 +0100</lastBuildDate>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 11 Apr 2019 21:59:43 +0100</pubDate>
+    <lastBuildDate>Thu, 11 Apr 2019 21:59:43 +0100</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -45,8 +45,8 @@ Et enfin vous pouvez tester l’ajout automatique de votre “produit cadeau” 
 
 </description>
         <pubDate>Tue, 29 Nov 2011 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/tutorial/magento/2011/11/29/associe-un-produit-cadeau-a-une-regle-de-prix-panier-magento.html</link>
-        <guid isPermaLink="true">http://localhost:4000/tutorial/magento/2011/11/29/associe-un-produit-cadeau-a-une-regle-de-prix-panier-magento.html</guid>
+        <link>/tutorial/magento/2011/11/29/associe-un-produit-cadeau-a-une-regle-de-prix-panier-magento.html</link>
+        <guid isPermaLink="true">/tutorial/magento/2011/11/29/associe-un-produit-cadeau-a-une-regle-de-prix-panier-magento.html</guid>
         
         
         <category>tutorial</category>
@@ -252,8 +252,8 @@ checkout_controller_onepage_save_shipping_method et checkout_controller_multishi
 
 </description>
         <pubDate>Wed, 22 Dec 2010 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/magento/tutorial/2010/12/22/rendre-le-message-cadeau-payant-magento.html</link>
-        <guid isPermaLink="true">http://localhost:4000/magento/tutorial/2010/12/22/rendre-le-message-cadeau-payant-magento.html</guid>
+        <link>/magento/tutorial/2010/12/22/rendre-le-message-cadeau-payant-magento.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/12/22/rendre-le-message-cadeau-payant-magento.html</guid>
         
         
         <category>magento</category>
@@ -313,8 +313,8 @@ checkout_controller_onepage_save_shipping_method et checkout_controller_multishi
 &lt;p&gt;&lt;img src=&quot;/assets/images/programme-conference.png&quot; alt=&quot;programme conférences&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 21 Oct 2010 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/magento/tutorial/2010/10/21/bargento-5-m-commerce-payement-a-lhonneur.html</link>
-        <guid isPermaLink="true">http://localhost:4000/magento/tutorial/2010/10/21/bargento-5-m-commerce-payement-a-lhonneur.html</guid>
+        <link>/magento/tutorial/2010/10/21/bargento-5-m-commerce-payement-a-lhonneur.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/10/21/bargento-5-m-commerce-payement-a-lhonneur.html</guid>
         
         
         <category>magento</category>
@@ -453,8 +453,8 @@ Design/adminhtml/default/default/template/sales/order/view/tab/info.phtml (ligne
 &lt;p&gt;Testé sur 1.4.1.0 et 1.4.1.1&lt;/p&gt;
 </description>
         <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/magento/tutorial/2010/10/05/ajouter-un-champ-supplementaire-commande-apparaitre-detailles-commande-backoffice-dans-emails-attribut-commande.html</link>
-        <guid isPermaLink="true">http://localhost:4000/magento/tutorial/2010/10/05/ajouter-un-champ-supplementaire-commande-apparaitre-detailles-commande-backoffice-dans-emails-attribut-commande.html</guid>
+        <link>/magento/tutorial/2010/10/05/ajouter-un-champ-supplementaire-commande-apparaitre-detailles-commande-backoffice-dans-emails-attribut-commande.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/10/05/ajouter-un-champ-supplementaire-commande-apparaitre-detailles-commande-backoffice-dans-emails-attribut-commande.html</guid>
         
         
         <category>magento</category>
@@ -529,8 +529,8 @@ A suivre…. &lt;img src=&quot;/assets/images/icon_smile.gif&quot; alt=&quot;:)&
 
 </description>
         <pubDate>Sun, 26 Sep 2010 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/magento/tutorial/2010/09/26/creation-client-code-sous-magento.html</link>
-        <guid isPermaLink="true">http://localhost:4000/magento/tutorial/2010/09/26/creation-client-code-sous-magento.html</guid>
+        <link>/magento/tutorial/2010/09/26/creation-client-code-sous-magento.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/09/26/creation-client-code-sous-magento.html</guid>
         
         
         <category>magento</category>
@@ -557,8 +557,8 @@ Aujourd’hui ou peut être les jours qui suit &lt;img src=&quot;/assets/images/
 
 </description>
         <pubDate>Sat, 25 Sep 2010 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/magento/tutorial/2010/09/25/creer-une-categorie-produit-client-commande-facture-par-code.html</link>
-        <guid isPermaLink="true">http://localhost:4000/magento/tutorial/2010/09/25/creer-une-categorie-produit-client-commande-facture-par-code.html</guid>
+        <link>/magento/tutorial/2010/09/25/creer-une-categorie-produit-client-commande-facture-par-code.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/09/25/creer-une-categorie-produit-client-commande-facture-par-code.html</guid>
         
         
         <category>magento</category>
@@ -685,8 +685,8 @@ Dans notre fichier de configuration :&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 23 Sep 2010 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/magento/tutorial/2010/09/23/ajouter-des-champs-specifiques-dans-linscription-dun-nouveau-client-magento.html</link>
-        <guid isPermaLink="true">http://localhost:4000/magento/tutorial/2010/09/23/ajouter-des-champs-specifiques-dans-linscription-dun-nouveau-client-magento.html</guid>
+        <link>/magento/tutorial/2010/09/23/ajouter-des-champs-specifiques-dans-linscription-dun-nouveau-client-magento.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/09/23/ajouter-des-champs-specifiques-dans-linscription-dun-nouveau-client-magento.html</guid>
         
         
         <category>magento</category>
@@ -897,8 +897,8 @@ Pour cela je vais ajouter la méthode:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;/assets/files/Newcolumn.rar&quot;&gt;Télécharger les fichiers&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 10 Jun 2010 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/magento/tutorial/2010/06/10/ajouter-une-colonne-dans-la-liste-des-commandes-magento-observer.html</link>
-        <guid isPermaLink="true">http://localhost:4000/magento/tutorial/2010/06/10/ajouter-une-colonne-dans-la-liste-des-commandes-magento-observer.html</guid>
+        <link>/magento/tutorial/2010/06/10/ajouter-une-colonne-dans-la-liste-des-commandes-magento-observer.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/06/10/ajouter-une-colonne-dans-la-liste-des-commandes-magento-observer.html</guid>
         
         
         <category>magento</category>
@@ -933,8 +933,8 @@ Pour cela je vais ajouter la méthode:&lt;/p&gt;
 
 </description>
         <pubDate>Sun, 06 Jun 2010 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/magento/tutorial/2010/06/06/addattributetofilter-et-le-filtre-des-collections-dobjets-magento.html</link>
-        <guid isPermaLink="true">http://localhost:4000/magento/tutorial/2010/06/06/addattributetofilter-et-le-filtre-des-collections-dobjets-magento.html</guid>
+        <link>/magento/tutorial/2010/06/06/addattributetofilter-et-le-filtre-des-collections-dobjets-magento.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/06/06/addattributetofilter-et-le-filtre-des-collections-dobjets-magento.html</guid>
         
         
         <category>magento</category>
