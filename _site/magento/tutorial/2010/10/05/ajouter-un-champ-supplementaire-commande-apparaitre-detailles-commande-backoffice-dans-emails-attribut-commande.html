@@ -195,7 +195,7 @@ La structure de notre petit module :</p>
 
 <p>Donc la première chose à faire est de penser comment stocker cette information
 dans la BD Magento :
-On va utiliser un attributs <img src="http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" /> (heur_livraison)!
+On va utiliser un attributs <img src="/assets/images/icon_smile.gif" alt=":)" /> (heur_livraison)!
 Dans notre fichier mysql4-install-0.1.0.php on va ajouter :</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
@@ -232,7 +232,7 @@ Puisque c’est information déponde du mode de livraison donc je vais ajouter m
 <p><img src="/assets/images/magento_heure_livraison.jpg" alt="attribut heure livraison commande" /></p>
 
 <p>L’action concernée est saveShippingMethod de la class Mage_Checkout_OnepageController :
-Donc on peut surcharger la méthode ce que je ne préfère pas comme je dit toujours <img src="http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" /> ou utiliser un observer, puisque il s’agit d’une action je vais utiliser l’event controller_action_postdispatch c’est mon préféré :).
+Donc on peut surcharger la méthode ce que je ne préfère pas comme je dit toujours <img src="/assets/images/icon_smile.gif" alt=":)" /> ou utiliser un observer, puisque il s’agit d’une action je vais utiliser l’event controller_action_postdispatch c’est mon préféré :).
 Est donc dans le fichier config.xml :</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;events&gt;</span>

@@ -12,10 +12,9 @@ La structure de notre petit module :
 
 ![attribut commande magento]({{ site.baseurl }}/assets/images/module_magento2.jpg)
 
-
 Donc la première chose à faire est de penser comment stocker cette information
 dans la BD Magento :
-On va utiliser un attributs ![:)](http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif) (heur_livraison)!
+On va utiliser un attributs ![:)]({{ site.baseurl }}/assets/images/icon_smile.gif) (heur_livraison)!
 Dans notre fichier mysql4-install-0.1.0.php on va ajouter :
 
 ```php
@@ -54,7 +53,7 @@ Résultat dans onepage :
 ![attribut heure livraison commande]({{ site.baseurl }}/assets/images/magento_heure_livraison.jpg)
 
 L’action concernée est saveShippingMethod de la class Mage_Checkout_OnepageController :
-Donc on peut surcharger la méthode ce que je ne préfère pas comme je dit toujours ![:)](http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif) ou utiliser un observer, puisque il s’agit d’une action je vais utiliser l’event controller_action_postdispatch c’est mon préféré :).
+Donc on peut surcharger la méthode ce que je ne préfère pas comme je dit toujours ![:)]({{ site.baseurl }}/assets/images/icon_smile.gif) ou utiliser un observer, puisque il s’agit d’une action je vais utiliser l’event controller_action_postdispatch c’est mon préféré :).
 Est donc dans le fichier config.xml :
 
 ```xml

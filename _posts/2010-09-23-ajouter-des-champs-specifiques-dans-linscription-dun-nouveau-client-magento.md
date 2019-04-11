@@ -48,7 +48,7 @@ On ajoute par exemple :
 </li>
 ```
 
-Puis il nous reste la partie traitement de la valeur du champ siret lors d’enregistrement du client, pour ça on a deux choix soit surcharger la méthode createPostAction() de la class Mage_Customer_AccountController ( ce que je préfère pas ![:)](http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif) ) soit en utilisant un observer, on va utiliser la deuxième méthode.
+Puis il nous reste la partie traitement de la valeur du champ siret lors d’enregistrement du client, pour ça on a deux choix soit surcharger la méthode createPostAction() de la class Mage_Customer_AccountController ( ce que je préfère pas ![:)]({{ site.baseurl }}/assets/images/icon_smile.gif) ) soit en utilisant un observer, on va utiliser la deuxième méthode.
 Dans notre fichier de configuration :
 
 ```xml

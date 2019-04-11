@@ -5,8 +5,8 @@
     <description>Web - E-commerce - Mobile </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 11 Apr 2019 22:18:02 +0100</pubDate>
-    <lastBuildDate>Thu, 11 Apr 2019 22:18:02 +0100</lastBuildDate>
+    <pubDate>Fri, 12 Apr 2019 00:05:06 +0100</pubDate>
+    <lastBuildDate>Fri, 12 Apr 2019 00:05:06 +0100</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -62,7 +62,7 @@ Au niveau utilisation c’est très simple il faut d’abord activer les message
 System -&amp;gt; configuration -&amp;gt; Ventes -&amp;gt; Messages cadeau-&amp;gt; Autoriser les messages cadeau au niveau de la commande.
 Puis crée le produit “Message cadeau” et n’oubliez pas de mettre une quantité positive du stock ou de choisir “Non” pour “Gérer les stocks” sinon le produit ne s’ajoute pas.
 Pius installer le module, allez à System -&amp;gt; configuration -&amp;gt; Ventes -&amp;gt; Produit message cadeau pour activer le module et ajouter l’ID du produit.
-Au niveau développement &lt;img src=&quot;http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt; :
+Au niveau développement &lt;img src=&quot;/assets/images/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt; :
 Il s’agit d’un observer de deux events :
 checkout_controller_onepage_save_shipping_method et checkout_controller_multishipping_shipping_post (pour le choix du multishipping ) donc un fichier config.xml qui correspond à :&lt;/p&gt;
 
@@ -334,7 +334,7 @@ La structure de notre petit module :&lt;/p&gt;
 
 &lt;p&gt;Donc la première chose à faire est de penser comment stocker cette information
 dans la BD Magento :
-On va utiliser un attributs &lt;img src=&quot;http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt; (heur_livraison)!
+On va utiliser un attributs &lt;img src=&quot;/assets/images/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt; (heur_livraison)!
 Dans notre fichier mysql4-install-0.1.0.php on va ajouter :&lt;/p&gt;
 
 &lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
@@ -371,7 +371,7 @@ Puisque c’est information déponde du mode de livraison donc je vais ajouter m
 &lt;p&gt;&lt;img src=&quot;/assets/images/magento_heure_livraison.jpg&quot; alt=&quot;attribut heure livraison commande&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;L’action concernée est saveShippingMethod de la class Mage_Checkout_OnepageController :
-Donc on peut surcharger la méthode ce que je ne préfère pas comme je dit toujours &lt;img src=&quot;http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt; ou utiliser un observer, puisque il s’agit d’une action je vais utiliser l’event controller_action_postdispatch c’est mon préféré :).
+Donc on peut surcharger la méthode ce que je ne préfère pas comme je dit toujours &lt;img src=&quot;/assets/images/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt; ou utiliser un observer, puisque il s’agit d’une action je vais utiliser l’event controller_action_postdispatch c’est mon préféré :).
 Est donc dans le fichier config.xml :&lt;/p&gt;
 
 &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;events&amp;gt;&lt;/span&gt;
@@ -610,7 +610,7 @@ On ajoute par exemple :&lt;/p&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Puis il nous reste la partie traitement de la valeur du champ siret lors d’enregistrement du client, pour ça on a deux choix soit surcharger la méthode createPostAction() de la class Mage_Customer_AccountController ( ce que je préfère pas &lt;img src=&quot;http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt; ) soit en utilisant un observer, on va utiliser la deuxième méthode.
+&lt;p&gt;Puis il nous reste la partie traitement de la valeur du champ siret lors d’enregistrement du client, pour ça on a deux choix soit surcharger la méthode createPostAction() de la class Mage_Customer_AccountController ( ce que je préfère pas &lt;img src=&quot;/assets/images/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt; ) soit en utilisant un observer, on va utiliser la deuxième méthode.
 Dans notre fichier de configuration :&lt;/p&gt;
 
 &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;&lt;/span&gt;

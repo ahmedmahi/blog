@@ -13,7 +13,7 @@ Au niveau utilisation c’est très simple il faut d’abord activer les message
 System -> configuration -> Ventes -> Messages cadeau-> Autoriser les messages cadeau au niveau de la commande.
 Puis crée le produit “Message cadeau” et n’oubliez pas de mettre une quantité positive du stock ou de choisir “Non” pour “Gérer les stocks” sinon le produit ne s’ajoute pas.
 Pius installer le module, allez à System -> configuration -> Ventes -> Produit message cadeau pour activer le module et ajouter l’ID du produit.
-Au niveau développement ![:)](http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif) :
+Au niveau développement ![:)]({{ site.baseurl }}/assets/images/icon_smile.gif) :
 Il s’agit d’un observer de deux events :
 checkout_controller_onepage_save_shipping_method et checkout_controller_multishipping_shipping_post (pour le choix du multishipping ) donc un fichier config.xml qui correspond à :
 

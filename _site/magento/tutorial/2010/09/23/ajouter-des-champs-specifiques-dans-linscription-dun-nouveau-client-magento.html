@@ -227,7 +227,7 @@ On ajoute par exemple :</p>
 <span class="nt">&lt;/li&gt;</span>
 </code></pre></div></div>
 
-<p>Puis il nous reste la partie traitement de la valeur du champ siret lors d’enregistrement du client, pour ça on a deux choix soit surcharger la méthode createPostAction() de la class Mage_Customer_AccountController ( ce que je préfère pas <img src="http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" /> ) soit en utilisant un observer, on va utiliser la deuxième méthode.
+<p>Puis il nous reste la partie traitement de la valeur du champ siret lors d’enregistrement du client, pour ça on a deux choix soit surcharger la méthode createPostAction() de la class Mage_Customer_AccountController ( ce que je préfère pas <img src="/assets/images/icon_smile.gif" alt=":)" /> ) soit en utilisant un observer, on va utiliser la deuxième méthode.
 Dans notre fichier de configuration :</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
