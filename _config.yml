@@ -1,0 +1,42 @@
+# Site
+name: "A. MAHI"
+description: "Web - E-commerce - Mobile "
+meta_description: "blog, Magento, magento2,développeur Magento frelance, Développeur Magento Laravel,Développeur React Native, maroc,casablanca."
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/logo.png'
+baseurl: 
+google_analytics: 'UA-46278016-1'
+disqus: 'ahmedmahi'
+mailchimp-list: 'https://mailchi.mp/e6becf892892/blogahmedmahi'
+
+# Authors
+authors:
+  ahmed:
+    name: Ahmed
+    display_name: Ahmed
+    gravatar: e5420c92f230112dec8f064f2c6b67cc
+    email: ahmed@mahi.ma
+    web: https://mahi.ma
+    twitter: https://twitter.com/ahmedmahi
+    description: "Ahmed MAHI consultant Technique web, e-commerce et mobile avec 10 ans d’expérience."
+
+# Plugins
+plugins: 
+  - jekyll-paginate
+  - jekyll-archives
+    
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+    
+# Pagination 
+paginate: 6
+paginate_path: /page:num/
+    
+# Other
+markdown: kramdown
+highlighter: rouge
