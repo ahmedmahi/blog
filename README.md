@@ -1,4 +1,4 @@
-# log.mahi.ma
+# blog.mahi.ma
 Mon blog  blog.mahi.ma
 
 Bienvenue sur le dépôt du blog de Ahmed Mahi.
