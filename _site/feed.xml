@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description>Web - E-commerce - Mobile </description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 11 Apr 2019 18:28:34 +0100</pubDate>
+    <lastBuildDate>Thu, 11 Apr 2019 18:28:34 +0100</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Associé un produit cadeau a une règle de prix panier Magento&quot;</title>
+        <description>&lt;p&gt;&lt;strong&gt;Nouveau un module magento&lt;/strong&gt; qui permet de lié un produit cadeau à une règle de prix panier,
+Le module se nomme : &lt;strong&gt;GiftPromo&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Le module permet :&lt;/strong&gt;
+•	D’associé un produit cadeau a une règle de prix panier (règles de cadeaux) donc bénéficier de toutes les fonctionnalités des règles par exemple :
+Associé un produit cadeau a un codes de remise, ajouter un produit cadeau lorsque le montant du panier est supérieur a une valeur bien déterminé, gérer les règles de cadeaux par priorité, groupes clients…..
+•	Possibilité d’ajouter plusieurs règles de cadeaux
+•	Possibilité d’ajouter plus d’un produit si règles est atteinte&lt;/p&gt;
+
+&lt;p&gt;Le module est disponible sur &lt;strong&gt;magento Connect&lt;/strong&gt; : &lt;a href=&quot;http://www.magentocommerce.com/magento-connect/amahi/extension/6559/s3ibusiness_giftpromo&quot;&gt;GiftPromo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Donc Aujourd’hui on va voir commet utiliser &lt;strong&gt;GiftPromo&lt;/strong&gt;, après l’installation il faut d’abord activer le module dans :
+System -&amp;gt; configuration -&amp;gt; Ventes -&amp;gt; GiftPromo -&amp;gt; Paramétrage-&amp;gt;Activé-&amp;gt; Oui&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/configuration2.jpg&quot; alt=&quot;règles de cadeaux&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Puis après aller dans :
+Promotions -&amp;gt; Règles de prix panier-&amp;gt; Gestion des cadeaux.
+Avant vous devez d’abord crée le produit (Catalogue/Gérer les produits) et n’oubliez pas de mettre un prix égale a zéro, une quantité positive du stock ou de choisir “Non” pour “Gérer les stocks” et noté l’Id du produit pour l’utiliser dans la création du cadeau.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/manage-gifts.jpg&quot; alt=&quot;manage free gifts&quot; /&gt;
+Puis ajouter des cadeaux:
+&lt;img src=&quot;/assets/images/addgift.jpg&quot; alt=&quot;manage free gifts&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Une fois les produits cadeaux ajouté, dans les “&lt;strong&gt;Règles de prix panier&lt;/strong&gt;” vous pouvez crée des règles et associé un “produit cadeau” a cette règle :
+&lt;img src=&quot;/assets/images/shiping-rule.jpg&quot; alt=&quot;manage free gifts&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans l’onglet “Action”, -&amp;gt; “Mettre à jour les prix en utilisant l’information suivante” vous allez alors retrouver les produit cadeaux que vous avez crée dans la liste “Appliquer”, choisissez l’un d’eux pour l’associé a votre règle.
+Note : ne pas changer la valeur de “Remise” et laissez-la à 0.
+Et enfin vous pouvez tester l’ajout automatique de votre “produit cadeau” dans le panier dés que la règle est atteinte.
+&lt;img src=&quot;/assets/images/cart-gift.jpg&quot; alt=&quot;cart free gift&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 29 Nov 2011 00:00:00 +0000</pubDate>
+        <link>/tutorial/magento/2011/11/29/associe-un-produit-cadeau-a-une-regle-de-prix-panier-magento.html</link>
+        <guid isPermaLink="true">/tutorial/magento/2011/11/29/associe-un-produit-cadeau-a-une-regle-de-prix-panier-magento.html</guid>
+        
+        
+        <category>tutorial</category>
+        
+        <category>magento</category>
+        
+      </item>
+    
+      <item>
+        <title>Rendre le message cadeau payant – magento</title>
+        <description>&lt;p&gt;Aujourd’hui je vous propose un petit module que j’ai développé pour rendre le message cadeau payant l’idée est d’ajouter un produit “Message cadeau” au panier si le message est spécifié lors du passage de la commande.
+Au niveau utilisation c’est très simple il faut d’abord activer les messages cadeau :
+System -&amp;gt; configuration -&amp;gt; Ventes -&amp;gt; Messages cadeau-&amp;gt; Autoriser les messages cadeau au niveau de la commande.
+Puis crée le produit “Message cadeau” et n’oubliez pas de mettre une quantité positive du stock ou de choisir “Non” pour “Gérer les stocks” sinon le produit ne s’ajoute pas.
+Pius installer le module, allez à System -&amp;gt; configuration -&amp;gt; Ventes -&amp;gt; Produit message cadeau pour activer le module et ajouter l’ID du produit.
+Au niveau développement &lt;img src=&quot;http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt; :
+Il s’agit d’un observer de deux events :
+checkout_controller_onepage_save_shipping_method et checkout_controller_multishipping_shipping_post (pour le choix du multishipping ) donc un fichier config.xml qui correspond à :&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!--&amp;gt;
+/**
+ * @category   Mahigento
+ * @package    Mahigento_Pgm
+ * @author    Ahmed MAHI/ S3i Business: 1hmedmahi@gmail.com -www.ahmedmahi.com
+ * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ &amp;lt;--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;config&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;modules&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Mahigento_Pgm&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.1.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Mahigento_Pgm&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/modules&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;adminhtml&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;acl&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;resources&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;admin&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;children&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;system&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;children&amp;gt;&lt;/span&gt;
+                                &lt;span class=&quot;nt&quot;&gt;&amp;lt;config&amp;gt;&lt;/span&gt;
+                                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;children&amp;gt;&lt;/span&gt;
+                                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;pgm&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;translate=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;module=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pgm&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                                       &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Produit message cadeau&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+                                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;sort_order&amp;gt;&lt;/span&gt;50&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sort_order&amp;gt;&lt;/span&gt;
+                                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/pgm&amp;gt;&lt;/span&gt;
+                                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/children&amp;gt;&lt;/span&gt;
+                                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/config&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/children&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/system&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/children&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/admin&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/resources&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/acl&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/adminhtml&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;global&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;models&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;pgm&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;class&amp;gt;&lt;/span&gt;Mahigento_Pgm_Model&lt;span class=&quot;nt&quot;&gt;&amp;lt;/class&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/pgm&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/models&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;events&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;checkout_controller_onepage_save_shipping_method&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;observers&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mahigento_pgm_shipping&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;model&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;class&amp;gt;&lt;/span&gt;pgm/pgm&lt;span class=&quot;nt&quot;&gt;&amp;lt;/class&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;method&amp;gt;&lt;/span&gt;addGiftMessageProduct&lt;span class=&quot;nt&quot;&gt;&amp;lt;/method&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mahigento_pgm_shipping&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/observers&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/checkout_controller_onepage_save_shipping_method&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;checkout_controller_multishipping_shipping_post&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;observers&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mahigento_pgm_multishipping&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;model&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;class&amp;gt;&lt;/span&gt;pgm/pgm&lt;span class=&quot;nt&quot;&gt;&amp;lt;/class&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;method&amp;gt;&lt;/span&gt;addGiftMessageProduct&lt;span class=&quot;nt&quot;&gt;&amp;lt;/method&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mahigento_pgm_multishipping&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/observers&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/checkout_controller_multishipping_shipping_post&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/events&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/global&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/config&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Et un fichier system.xml pour ajouter les éléments de la configuration :activation du module et la spécification de l’id du produit à ajouter.&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!--&amp;gt;
+/**
+ * @category   Mahigento
+ * @package    Mahigento_Pgm
+ * @author    Ahmed MAHI/ S3i Business: 1hmedmahi@gmail.com -www.ahmedmahi.com
+ * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ &amp;lt;--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;config&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sections&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;pgm&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;translate=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;label&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;module=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pgm&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;label&amp;gt;&lt;/span&gt;Produit message cadeau&lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;tab&amp;gt;&lt;/span&gt;sales&lt;span class=&quot;nt&quot;&gt;&amp;lt;/tab&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;frontend_type&amp;gt;&lt;/span&gt;text&lt;span class=&quot;nt&quot;&gt;&amp;lt;/frontend_type&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;sort_order&amp;gt;&lt;/span&gt;900&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sort_order&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;show_in_default&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/show_in_default&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;show_in_website&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/show_in_website&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;show_in_store&amp;gt;&lt;/span&gt;0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/show_in_store&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;groups&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;settings&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;translate=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;label&amp;gt;&lt;/span&gt;Settings&lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;frontend_type&amp;gt;&lt;/span&gt;text&lt;span class=&quot;nt&quot;&gt;&amp;lt;/frontend_type&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sort_order&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sort_order&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;show_in_default&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/show_in_default&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;show_in_website&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/show_in_website&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;show_in_store&amp;gt;&lt;/span&gt;0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/show_in_store&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;fields&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;enabled&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;translate=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;label&amp;gt;&lt;/span&gt;Activer&lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;frontend_type&amp;gt;&lt;/span&gt;select&lt;span class=&quot;nt&quot;&gt;&amp;lt;/frontend_type&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;source_model&amp;gt;&lt;/span&gt;adminhtml/system_config_source_yesno&lt;span class=&quot;nt&quot;&gt;&amp;lt;/source_model&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;sort_order&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sort_order&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;show_in_default&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/show_in_default&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;show_in_website&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/show_in_website&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;show_in_store&amp;gt;&lt;/span&gt;0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/show_in_store&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/enabled&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;productid&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;translate=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;label&amp;gt;&lt;/span&gt;ID produit&lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;frontend_type&amp;gt;&lt;/span&gt;text&lt;span class=&quot;nt&quot;&gt;&amp;lt;/frontend_type&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;sort_order&amp;gt;&lt;/span&gt;2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sort_order&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;show_in_default&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/show_in_default&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;show_in_website&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/show_in_website&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;show_in_store&amp;gt;&lt;/span&gt;0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/show_in_store&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/productid&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/fields&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/settings&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/groups&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/pgm&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sections&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/config&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Et l’observer avec quelques commentaires :&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; 
+    &lt;span class=&quot;sd&quot;&gt;/**  
+    * @category   Mahigento   
+    * @package    Mahigento_Pgm   
+    * @author    Ahmed MAHI/ S3i Business: 1hmedmahi@gmail.com -www.ahmedmahi.com  
+    * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)  
+    */&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Mahigento_Pgm_Model_Pgm&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;     
+    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_giftId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getStoreConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'produitcadeau/settings/enabled'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;             
+        &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_giftId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getStoreConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'pgm/settings/productid'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// La méthode principale d'ajout de notre produit &quot;message cadeau&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addGiftMessageProduct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;c1&quot;&gt;//Vérifier si le module est activé&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getStoreConfig&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'produitcadeau/settings/enabled'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$giftMessages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$observer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getParam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'giftmessage'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;is_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$giftMessages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+               &lt;span class=&quot;c1&quot;&gt;// Supprimer le produit s'il est déjà dans le panier&lt;/span&gt;
+               &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;removeGiftMessageProduct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$observer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getQuote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getProduct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$giftMessages&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$entityId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                      &lt;span class=&quot;c1&quot;&gt;//Si le message est vide ne fait rien continué&lt;/span&gt;
+                        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'message'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                            &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                        &lt;span class=&quot;nv&quot;&gt;$cart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSingleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'checkout/cart'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                        &lt;span class=&quot;nv&quot;&gt;$cart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addProduct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                        &lt;span class=&quot;nv&quot;&gt;$cart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;//Sinon une fois un changement détecté dans le panier il aura une redirection vers la page panier (la méthode _expireAjax du controlleur)&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSingleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'checkout/session'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCartWasUpdated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//Supprimer le produit du panier&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;removeGiftMessageProduct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$quote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$quote&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAllItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getProductId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_giftId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSingleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'checkout/cart'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;removeItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getProduct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_giftId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$product&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'catalog/product'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_giftId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getStockItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//&quot;En stock&quot; ou  &quot;Non&quot; pour  &quot;Gérer les stocks&quot; sinon le produit ne pourra pas être ajouté&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;amp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;amp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getStockItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getUseConfigManageStock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getStockItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getIsInStock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$product&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 22 Dec 2010 00:00:00 +0000</pubDate>
+        <link>/magento/tutorial/2010/12/22/rendre-le-message-cadeau-payant-magento.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/12/22/rendre-le-message-cadeau-payant-magento.html</guid>
+        
+        
+        <category>magento</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Bargento 5 : M-commerce, payement à l’honneur</title>
+        <description>&lt;p&gt;Après 4 éditions, Bargento est devenu le lieu incontournable pour tous les acteurs souhaitant rencontrer professionnels et experts du milieu, nouer de nouvelles alliances ou trouver de nouveaux prestataires.&lt;/p&gt;
+
+&lt;p&gt;Que votre site soit déjà sous Magento ou que vous envisagiez de migrer vers cette solution, votre visite à Bargento vous apportera toutes les réponses sur la solution E-commerce la plus en vue au monde.&lt;/p&gt;
+
+&lt;p&gt;Le 8 novembre 2010, &lt;strong&gt;30 exposants&lt;/strong&gt; seront à votre disposition pour obtenir toutes les informations et devis en une seule journée. &lt;strong&gt;16 conférences&lt;/strong&gt; vous permettront de tout savoir des best practices et les 1200 m² de CAP15 seront de nouveau &lt;strong&gt;le plus grand espace de rencontre européen autour de Magento&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;un-véritable-salon-du-e-commerce-dédié-à-magento&quot;&gt;Un véritable salon du e-commerce dédié à Magento!&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/conf-bargento4.png&quot; alt=&quot;bargento 5 magento mahigento&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fort du succès des précédents évènements, le programme a été encore enrichi pour proposer &lt;strong&gt;une information complète sur l’eco-système e-commerce&lt;/strong&gt; : M-commerce, référencement, gestion commerciale, gestion du marketing en ligne, logistique, hébergement, la conquête d’un marché international…&lt;/p&gt;
+
+&lt;p&gt;Plus de &lt;strong&gt;750 personnes sont attendues&lt;/strong&gt; pour cette édition. Une attention toute particulière est portée sur l’ouverture du salon à un large public avec des conférences et des ateliers moins techniques pour bien comprendre la mise en place et le potentiel d’un site Magento.&lt;/p&gt;
+
+&lt;p&gt;Tous les points seront traités, création de site, SEO, SEM, optimisation, ERP etc…, mais trois d’entres eux seront tout particulièrement à l’honneur : &lt;strong&gt;le M-commerce, la logistique et les payements&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Fia-net&lt;/strong&gt;, Gold sponsor de Bargento 5 et pacificateur officiel des relations acheteurs / vendeurs sur Internet, viendra également nous présenter sa solution, ses innovations et son fonctionnement avec Magento.&lt;/p&gt;
+
+&lt;h1 id=&quot;des-invités-de-prestige&quot;&gt;Des invités de prestige&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Magento Inc&lt;/strong&gt;, éditeur de la solution, nous fera l’honneur de sa présence pour venir vous présenter les dernières nouveautés, leurs équipes, leur vision de l’e-commerce et pour répondre directement à toutes vos questions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Zeev Suraski&lt;/strong&gt;, légende du web (pour un public averti tout de même…), co-créateur de PHP et fondateur de Zend qui est la base de Magento, nous fera également l’honneur de sa présence !&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Les dirigeants des plus grands sites Web&lt;/strong&gt; de E-commerce, bien qu’ils soient discrets, sont souvent présents lors des Bargento. Venez à leur rencontre pour découvrir comment ils définissent leur stratégie online !&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Fia-net&lt;/strong&gt; viendra également nous présenter sa solution et son interaction avec Magento. Leurs services sont aujourd’hui utilisés par plus de 1000 sites en France et permettent d’une part aux e-commerçants d’améliorer leur transformation en rassurant les clients, et d’autres part d’avoir une véritable évaluation de la satisfaction des clients.&lt;/p&gt;
+
+&lt;h1 id=&quot;le-cap-15--une-histoire-damour-naissante&quot;&gt;Le CAP 15 : une histoire d’amour naissante?&lt;/h1&gt;
+
+&lt;p&gt;Il faut dire qu’avec la croissance qu’ont connue chacun des précédents Bargento (augmentation de la fréquentation de 50% à chaque fois…), nous n’avions jamais eu l’occasion de retourner 2 fois dans la même salle… Heureusement, le CAP 15 a su nous montrer son potentiel de séduction… espace VIP face à la tour Eiffel, des salles modulaires à souhaits, &lt;strong&gt;nous sommes donc très heureux de pouvoir vous accueillir à nouveau dans cet espace en plein centre de Paris.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Un effort sera également fait pour accueillir plus rapidement tous les participants et éviter l’attente à l’entrée, notamment en mettant en place des lecteurs de code barre.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.cap15.com/situation.php?IDRub=21&quot;&gt;CAP 15 – 3 quai de grenelle 75015 Paris.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;table-ronde-barcamp-et-ateliers&quot;&gt;Table ronde, Barcamp et Ateliers&lt;/h1&gt;
+
+&lt;p&gt;Cette année &lt;strong&gt;une table ronde sera organisée sur le thème du M-commerce par l’éditeur de la solution&lt;/strong&gt;, rejoint pour l’occasion par des sociétés ayant déjà fait ce mouvement ou souhaitant passer au M-commerce.&lt;/p&gt;
+
+&lt;p&gt;Un espace sera aménagé dans la salle Beach l’après midi pour accueillir des ateliers et un Barcamp afin que chacun puisse découvrir tous les aspects de la solution ou les innovations à venir.&lt;/p&gt;
+
+&lt;h1 id=&quot;un-programme-pour-répondre-à-toutes-vos-questions&quot;&gt;Un programme pour répondre à toutes vos questions&lt;/h1&gt;
+
+&lt;p&gt;Les conférences sont maintenant regroupées en thèmes afin que chacun puisse trouver les réponses qu’il cherche :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/programme-conference.png&quot; alt=&quot;programme conférences&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 21 Oct 2010 00:00:00 +0000</pubDate>
+        <link>/magento/tutorial/2010/10/21/bargento-5-m-commerce-payement-a-lhonneur.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/10/21/bargento-5-m-commerce-payement-a-lhonneur.html</guid>
+        
+        
+        <category>magento</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Ajouter un champ supplémentaire dans la commande - attribut commande</title>
+        <description>&lt;p&gt;Supposant qu’on aime avoir une information supplémentaire sur la commande de notre client par exemple : “Heur de livraison souhaitée”, “au nom de”, commentaire….
+Cette information qui doit être bien sur affiché dans les détailles de la commande et qu’on veut envoyer aussi pas les emails…
+Aujourd’hui on va crée un petit module qui gère ca.
+La structure de notre petit module :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/module_magento2.jpg&quot; alt=&quot;attribut commande magento&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Donc la première chose à faire est de penser comment stocker cette information
+dans la BD Magento :
+On va utiliser un attributs &lt;img src=&quot;http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt; (heur_livraison)!
+Dans notre fichier mysql4-install-0.1.0.php on va ajouter :&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$installer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$installer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;startSetup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$setup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage_Eav_Model_Entity_Setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'core_setup'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+ 
+ 
+&lt;span class=&quot;nv&quot;&gt;$installer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getConnection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$installer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'sales_flat_order'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'heur_livraison'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'varchar(255) DEFAULT NULL AFTER `shipping_method`'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$setup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;startSetup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$setup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'order'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'heur_livraison'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'type'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'text'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$installer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;endSetup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Vous remarquez que ce n’est pas assez simple comme pour &lt;a href=&quot;http://test.mahigento.com/ajouter-des-champs-specifiques-dans-linscription-dun-nouveau-client-magento&quot;&gt;les attributs clients&lt;/a&gt;, pour les commandes on a obligé d’ajouter une ligne dans la table «sales_flat_order» ou utiliser addAttribute des deux class Mage_Sales_Model_Mysql4_Setup et Mage_Sales_Model_Entity_Setup.
+Donc cela va crée un attribut « commande ».
+Maintenant je passe à la façon d’enregistrer la valeur de cet attribut.
+Puisque c’est information déponde du mode de livraison donc je vais ajouter mon champ à la fin du fichier : checkout/ shipping_method/ available.phtml&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;label&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;heur_livraison_souhaitee&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;strong&amp;gt;&lt;/span&gt;Heur de livraison souhaitée&lt;span class=&quot;nt&quot;&gt;&amp;lt;/strong&amp;gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;input-box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;heur_livraison_souhaitee&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;heur_livraison_souhaitee&quot;&lt;/span&gt;  &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;input-text validation-passed&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Résultat dans onepage :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/magento_heure_livraison.jpg&quot; alt=&quot;attribut heure livraison commande&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;L’action concernée est saveShippingMethod de la class Mage_Checkout_OnepageController :
+Donc on peut surcharger la méthode ce que je ne préfère pas comme je dit toujours &lt;img src=&quot;http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt; ou utiliser un observer, puisque il s’agit d’une action je vais utiliser l’event controller_action_postdispatch c’est mon préféré :).
+Est donc dans le fichier config.xml :&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;events&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;controller_action_postdispatch&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;observers&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mahigento_addattorder_gethls&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;singleton&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;class&amp;gt;&lt;/span&gt;addattorder/observer&lt;span class=&quot;nt&quot;&gt;&amp;lt;/class&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;method&amp;gt;&lt;/span&gt;getHeurLivraison&lt;span class=&quot;nt&quot;&gt;&amp;lt;/method&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mahigento_addattorder_gethls&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/observers&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/controller_action_postdispatch&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;sales_order_place_before&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;observers&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mahigento_addattorder_sethls&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;singleton&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;class&amp;gt;&lt;/span&gt;addattorder/observer&lt;span class=&quot;nt&quot;&gt;&amp;lt;/class&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;method&amp;gt;&lt;/span&gt;setHeurLivraison&lt;span class=&quot;nt&quot;&gt;&amp;lt;/method&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mahigento_addattorder_sethls&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/observers&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sales_order_place_before&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/events&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Il y’a en fait 2 observer que je vais utiliser car le premier de l’event controller_action_postdispatch c’est juste pour conservé la valeur du champ dans la session c’est le deuxième qu’on va utiliser pour l’enregistrement dans la commande
+Les 2 observers sont lié au 2 méthodes de mon fichier Observer.php suivants :&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+ 
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Mahigento_Addattorder_Model_Observer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ 
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getHeurLivraison&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ 
+        &lt;span class=&quot;nv&quot;&gt;$Controller&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$observer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getControllerAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$Controller&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage_Checkout_OnepageController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$actionName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Controller&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getFullActionName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$actionName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'checkout_onepage_saveShippingMethod'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Controller&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getPost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'heur_livraison'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSingleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'core/session'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setHeurLivraison&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'heur_livraison'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ 
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setHeurLivraison&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$order&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$observer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getOrder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$session&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSingleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'core/session'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hasHeurLivraison&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$order&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'heur_livraison'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHeurLivraison&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;unsetHeurLivraison&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ 
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Le rôle de la première méthode est d’enregistré la valeur du champ si elle existe dans la session en attendant qu’avant directement le passage de la commande « sales_order_place_before » la méthode setHeurLivraison affecte la valeur de la session vers l’attribut commande.
+Et enfin pour afficher la valeur dans les détails de la commande dans le backoffice on a qu’ajouter par exemple dans :
+Design/adminhtml/default/default/template/sales/order/view/tab/info.phtml (ligne 79).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-php+HTML&quot;&gt;&amp;lt;br /&amp;gt;
+&amp;lt;?php echo $this-&amp;gt;__('Heure de livraison souhaitée :'). $_order-
+&amp;gt;getHeurLivraison() ?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Résultat :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/information_livraison_magento_mahigento.jpg&quot; alt=&quot;attribut commande magento&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Et pour les emails on peut utiliser dans les gabaries la variable&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;{  {var order.heur_livraison }  }&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Noubliez pas de vider le cache et se déconnecté puis faites votre première commande test :).&lt;/p&gt;
+
+&lt;p&gt;Testé sur 1.4.1.0 et 1.4.1.1&lt;/p&gt;
+</description>
+        <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
+        <link>/magento/tutorial/2010/10/05/ajouter-un-champ-supplementaire-commande-apparaitre-detailles-commande-backoffice-dans-emails-attribut-commande.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/10/05/ajouter-un-champ-supplementaire-commande-apparaitre-detailles-commande-backoffice-dans-emails-attribut-commande.html</guid>
+        
+        
+        <category>magento</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Création d’un client a l’aide du code sous Magento</title>
+        <description>&lt;p&gt;Voyons comment créer un client.
+Dans le helper par exemple j’ajoute la méthode :&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;CreateCustomer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$customerInformations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'customer/customer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebsiteId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getWebsite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;loadByEmail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$customerInformations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'email'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;cm&quot;&gt;/* $customer-&amp;gt;setEmail($customerInformations['email']);
+              $customer-&amp;gt;setFirstname($customerInformations['firstname']);
+              $customer-&amp;gt;setLastname($customerInformations['lastname']);
+              $customer-&amp;gt;setPassword($customerInformations['password']); */&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$customerInformations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ 
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;Zend_Debug&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Donc une petite explication de la méthode :
+Premièrement j’initialise mon objet Model « $customer »&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'customer/customer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Puis je lui affect une boutique dans mon cas la boutique par défaut :&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setWebsiteId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getWebsite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Je vérifie si le client existe déjà dans la base (à l’aide d’adresse émail)&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;loadByEmail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$customerInformations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'email'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Pour renseigner les informations client je peux utiliser soit:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setEmail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$customerInformations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'email'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFirstname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$customerInformations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'firstname'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setLastname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$customerInformations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'lastname'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setPassword&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$customerInformations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ou&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$customerInformations&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'email'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'1hmedmahi@gmail.com'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'firstname'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Ahmed'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'lastname'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Mahi'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'password'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'magento'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'inforbycode'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;CreateCustomer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$customerInformations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;On fait on pas encore terminé car on a juste crée un client avec des informations basique il ne reste ses adresses.
+A suivre…. &lt;img src=&quot;/assets/images/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 26 Sep 2010 00:00:00 +0000</pubDate>
+        <link>/magento/tutorial/2010/09/26/creation-client-code-sous-magento.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/09/26/creation-client-code-sous-magento.html</guid>
+        
+        
+        <category>magento</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Créer une catégorie, produit, client, commande, facture…par code</title>
+        <description>&lt;p&gt;Souvent on a besoin d’importer des informations de tout type (catalogue, clients, commandes, factures,…) depuis des plates-formes que soit externes par exemple des marketsplaces d’e-commerce,des plate-formes du e-logistique, ou interne depuis notre system d’information (erp), ou même depuis notre ancienne boutique vers Magento.
+Ou tout simplement on a un besoin spécifique qui ne oblige a crée l’un de ces informations par le code.
+Aujourd’hui ou peut être les jours qui suit &lt;img src=&quot;/assets/images/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt; on va voir comment crée par code dans Magento un :&lt;/p&gt;
+
+&lt;p&gt;-&lt;a href=&quot;/magento/tutorial/2010/09/26/creation-client-code-sous-magento.html&quot;&gt;client&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;-produit, catégorie.&lt;/p&gt;
+
+&lt;p&gt;-commande.&lt;/p&gt;
+
+&lt;p&gt;-facture.&lt;/p&gt;
+
+&lt;p&gt;-livraison.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 25 Sep 2010 00:00:00 +0000</pubDate>
+        <link>/magento/tutorial/2010/09/25/creer-une-categorie-produit-client-commande-facture-par-code.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/09/25/creer-une-categorie-produit-client-commande-facture-par-code.html</guid>
+        
+        
+        <category>magento</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Ajouter des champs spécifiques dans l’inscription d’un nouveau client</title>
+        <description>&lt;p&gt;Des fois on a besoin d’avoir quelques informations supplémentaires sur nos clients par exemple : n° Siret, date de naissance… aujourd’hui donc on va essayer de voir comment ajouter des champs spécifiques dans le formulaire d’inscription des clients.&lt;/p&gt;
+
+&lt;p&gt;Voici la structure de notre petit module :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/structure.png&quot; alt=&quot;structure du module magento: attribut cleint&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Sans oublier le fichier Mahigento_Newattcustomer.xml pour l’activation de notre nouveau module.
+Premièrement on doit ajouter un nouvel attribut client :
+Dans le fichier mysql4-install-0.1.0.php vous allez mettre :&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$installer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;Mage_Customer_Model_Entity_Setup&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'core_setup'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$installer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;startSetup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$installer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'customer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'siret'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'label'&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Siret'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'visible'&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'required'&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$installer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;endSetup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Cela lors de l’installation du module va crée automatiquement l’attribut client “siret”.
+&lt;img src=&quot;/assets/images/attribut-client-backoffice.png&quot; alt=&quot;attribut client backoffice  Magento&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;c’est fini avec le backoffice passons maintenant au front &lt;img src=&quot;/assets/images/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt;
+Maintenant le frontOffice on ajoute notre champ dans le fichier templete il s’agit de : customer/form/register.phtml
+On ajoute par exemple :&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;                            
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;label&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;siret&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;em&amp;gt;&lt;/span&gt;*&lt;span class=&quot;nt&quot;&gt;&amp;lt;/em&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;cp&quot;&gt;&amp;lt;?php echo $this-&amp;gt;__('Siret') ?&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;input-box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;                            
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;siret&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;siret&quot;&lt;/span&gt;  
+      &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;?php echo $this-&amp;gt;__('Siret') ?&amp;gt;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;input-text  required-entry&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;                            
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Puis il nous reste la partie traitement de la valeur du champ siret lors d’enregistrement du client, pour ça on a deux choix soit surcharger la méthode createPostAction() de la class Mage_Customer_AccountController ( ce que je préfère pas &lt;img src=&quot;http://blog.ahmedmahi.com/wp-includes/images/smilies/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt; ) soit en utilisant un observer, on va utiliser la deuxième méthode.
+Dans notre fichier de configuration :&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;config&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;modules&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Mahigento_Newattcustomer&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.1.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Mahigento_Newattcustomer&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/modules&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;global&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;events&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;controller_action_postdispatch&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;observers&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mahigento_newattcustomer_save&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;singleton&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;class&amp;gt;&lt;/span&gt;newattcustomer/observer&lt;span class=&quot;nt&quot;&gt;&amp;lt;/class&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;method&amp;gt;&lt;/span&gt;saveSiret&lt;span class=&quot;nt&quot;&gt;&amp;lt;/method&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mahigento_newattcustomer_save&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/observers&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/controller_action_postdispatch&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/events&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;models&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;newattcustomer&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;class&amp;gt;&lt;/span&gt;Mahigento_Newattcustomer_Model&lt;span class=&quot;nt&quot;&gt;&amp;lt;/class&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/newattcustomer&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/models&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;resources&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;newattcustomer_setup&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;setup&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;module&amp;gt;&lt;/span&gt;Mahigento_Newattcustomer&lt;span class=&quot;nt&quot;&gt;&amp;lt;/module&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/setup&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;connection&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;use&amp;gt;&lt;/span&gt;core_setup&lt;span class=&quot;nt&quot;&gt;&amp;lt;/use&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/connection&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/newattcustomer_setup&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/resources&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/global&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/config&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;et dans Observer.php:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Mahigento_Newattcustomer_Model_Observer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;saveSiret&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$Controller&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$observer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getControllerAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//si notre Controller correspond bien au controlller qui traite l'enregistrement&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$Controller&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage_Customer_AccountController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$actionName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Controller&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getFullActionName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// l'action qui traite l'enregistrement d'un nouveu cleint&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$actionName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'customer_account_createpost'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// récuperer les informations envoyé par le formulaire&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$Controller&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getPost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;$customerId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSingleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'customer/session'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'customer/customer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$customerId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;// affecter le siret au client en cours&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSiret&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'siret'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;$customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Et voila maintenant on a le champ Siret ajouter dans le formulaire d’enregistrement et dans le backoffice Magento comme information supplémentaire du client.&lt;/p&gt;
+
+&lt;p&gt;Testé sur 1.4.1.0 et 1.4.1.1
+&lt;a href=&quot;/assets/files/newattcustomer.rar&quot;&gt;Télécharger les fichiers&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 23 Sep 2010 00:00:00 +0000</pubDate>
+        <link>/magento/tutorial/2010/09/23/ajouter-des-champs-specifiques-dans-linscription-dun-nouveau-client-magento.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/09/23/ajouter-des-champs-specifiques-dans-linscription-dun-nouveau-client-magento.html</guid>
+        
+        
+        <category>magento</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Ajouter une colonne dans la liste des commandes Magento (observer)</title>
+        <description>&lt;p&gt;Aujourd’hui on va essayer d’ajouter une colonne dans la liste des commandes mais on ne va pas surcharger la classe :&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Mage_Adminhtml_Block_Sales_Order_Grid&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Puisque ce n’est pas recommandée dans Magento : quand une même classe est surchargée par 2 module cela cause un conflit, des fois bien sur on n’a pas le choix, contrairement a notre cas d’aujourd’hui &lt;img src=&quot;/assets/images/icon_smile.gif&quot; alt=&quot;:)&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Alors on va utiliser un observer : l’événement qui nous intéresse est&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;adminhtml_block_html_before&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Donc on doit ajouter dans notre fichier config.xml :&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;config&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;modules&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Mahigento_Newcolumn&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;0.1.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Mahigento_Newcolumn&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/modules&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;global&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;models&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;newcolumn&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;class&amp;gt;&lt;/span&gt;Mahigento_Newcolumn_Model&lt;span class=&quot;nt&quot;&gt;&amp;lt;/class&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/newcolumn&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/models&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;events&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;adminhtml_block_html_before&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;observers&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mahigento_newcolumn_grid&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;singleton&lt;span class=&quot;nt&quot;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;class&amp;gt;&lt;/span&gt;newcolumn/grid&lt;span class=&quot;nt&quot;&gt;&amp;lt;/class&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;method&amp;gt;&lt;/span&gt;ajouter&lt;span class=&quot;nt&quot;&gt;&amp;lt;/method&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mahigento_newcolumn_grid&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/observers&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/adminhtml_block_html_before&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/events&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/global&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/config&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Comme vous remarqué ici on a déclaré le nom de la classe et le nom de la méthode à exécuter lorsque l’événement se produit, attaquons donc la méthode ‘ajouter’ de la classe&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Mahigento_Newcolumn_Model_Grid (Grid.php)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Mahigento_Newcolumn_Model_Grid&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ajouter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$observer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage_Adminhtml_Block_Sales_Order_Grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'shipping_description'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'header'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'sales'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Methode de livraison'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'index'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'shipping_description'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'type'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'text'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'width'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'100px'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'real_order_id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ 
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Alors cette fonction va ajouter une colonne ‘Méthode de livraison’ pour voire directement de quel mode de livraison s’agit- il sont avoir besoin d’ouvrir la commande, si on veut ajouter une autre information par exemple le mode de paiement
+On va juste modifier la méthode addColumn :&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'payment_method'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'header'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'sales'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Méthode de paiement'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'index'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'payment_method'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'type'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'text'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'width'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'100px'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;La seul contrainte c’est que cette information doit être déjà dans la collection des commandes.
+Si c’est pas le cas par exemple je veux ajouter l’email et le groupe client je doit alors modifier la collection :
+Pour cela je vais ajouter la méthode:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;  &lt;span class=&quot;nf&quot;&gt;getnewcollection&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$collection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getResourceModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'sales/order_grid_collection'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$collection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSelect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'client'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$collection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'customer/entity'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt;
+              &lt;span class=&quot;s1&quot;&gt;'client.entity_id = main_table.customer_id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'email'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'group_id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'order'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$collection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'sales/order'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;'order.entity_id=main_table.entity_id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'shipping_description'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$collection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;et puis :&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;$block-&amp;gt;setCollection($this-&amp;gt;getnewcollection());//affecter la nouvelle collection&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;maintenant pour rendre mes nouvelles colonnes filtrables et tri-ables j’utilise ça :&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;  &lt;span class=&quot;nf&quot;&gt;FilterAndSort&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$newcolumns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getParam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getVarNameFilter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'adminhtml'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;prepareFilterString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getColumns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$columns&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$columnId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$field&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$column&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getFilterIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$column&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getFilterIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+           &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$column&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;in_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$columnId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$newcolumns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)){&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$columnId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$columnId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;
+                    &lt;span class=&quot;nb&quot;&gt;strlen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$columnId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+               &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$column&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getFilter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;$column&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getFilter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$columnId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;$cond&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$column&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getFilter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCondition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$field&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cond&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                     &lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCollection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addFieldToFilter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$field&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cond&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;$columnIdNameSort&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getParam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getVarNameSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+                                   &lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_defaultSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;in_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$columnIdNameSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$newcolumns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)){&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;$dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getParam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getVarNameDir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+                                 &lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_defaultDir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;$dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;strtolower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'desc'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'desc'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'asc'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;$column_s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$columnIdNameSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;$column_s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;$column_s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$column_s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getFilterIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;$column_s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getFilterIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$column_s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+                    &lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCollection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOrder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$column_s&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;et pour utiliser cette fonction :&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;$this-&amp;gt;FilterAndSort($block,array(‘email’,’group’,’shipping_description’));&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Donc finalement notre class : Mahigento_Newcolumn_Model_Grid devient:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Mahigento_Newcolumn_Model_Grid&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ajouter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$observer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getEvent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;instanceof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage_Adminhtml_Block_Sales_Order_Grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'shipping_description'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'header'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'sales'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Methode de livraison'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'index'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'shipping_description'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'type'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'text'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'width'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'100px'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$groups&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getResourceModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'customer/group_collection'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addFieldToFilter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'customer_group_id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'gt'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toOptionHash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+            &lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'group'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'header'&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'customer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Group'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'index'&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;  &lt;span class=&quot;s1&quot;&gt;'group_id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'type'&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;  &lt;span class=&quot;s1&quot;&gt;'options'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'width'&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;  &lt;span class=&quot;s1&quot;&gt;'50px'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;s1&quot;&gt;'options'&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;  &lt;span class=&quot;nv&quot;&gt;$groups&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addColumn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'email'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;'header'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Mage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'sales'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'email'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;'index'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'email'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;'type'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'text'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;'width'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'50px'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+    &lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCollection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getnewcollection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;FilterAndSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'email'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'group'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'shipping_description'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;  &lt;span class=&quot;nf&quot;&gt;FilterAndSort&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$newcolumns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.......&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;  &lt;span class=&quot;nf&quot;&gt;getnewcollection&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.......&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$collection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/files/Newcolumn.rar&quot;&gt;Télécharger les fichiers&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 10 Jun 2010 00:00:00 +0100</pubDate>
+        <link>/magento/tutorial/2010/06/10/ajouter-une-colonne-dans-la-liste-des-commandes-magento-observer.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/06/10/ajouter-une-colonne-dans-la-liste-des-commandes-magento-observer.html</guid>
+        
+        
+        <category>magento</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>addAttributeToFilter() et le filtre des collections d’objets Magento</title>
+        <description>&lt;p&gt;Dans une série de petit articles sur la manipulation des collections d’objets Magento  aujourd’hui on va parler sur la fonction &lt;strong&gt;addAttributeToFilter()&lt;/strong&gt; cette fonction sert à filtrer les  collections d’objets (Entités) suivant leur attributs (on parle ici des objets  stockés suivant  le modèle EAV :&lt;strong&gt;Entité – Attribut – Valeur&lt;/strong&gt;) :&lt;/p&gt;
+
+&lt;p&gt;Par exemple on cherche les produits activés dans le BackOffice donc dans ce cas on utilise :&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$_productCollection&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$model_product&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCollection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;addAttributeToFilter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'status'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Maintenant les différents type de filtre pour fonction addAttributeToFilter() :&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;from&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fromValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;to&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$toValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;like&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$likeValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;neq&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$notEqualValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;in&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$inValues&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;nin&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$notInValues&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Un exemple : on filtre sur les produits dont le nom commence par la lettre a:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;addAttributeToFilter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'like'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a%'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 06 Jun 2010 00:00:00 +0100</pubDate>
+        <link>/magento/tutorial/2010/06/06/addattributetofilter-et-le-filtre-des-collections-dobjets-magento.html</link>
+        <guid isPermaLink="true">/magento/tutorial/2010/06/06/addattributetofilter-et-le-filtre-des-collections-dobjets-magento.html</guid>
+        
+        
+        <category>magento</category>
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+  </channel>
+</rss>
