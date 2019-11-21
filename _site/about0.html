@@ -6,7 +6,7 @@
     
 <link rel="icon" href="/assets/images/logo.png">
     
-<title>Ahmed MAHI - Consultant Technique web, e-commerce et mobile | Blog MAHI</title>
+<title>Mediumish Template for Jekyll | Blog MAHI</title>
     
  
  
@@ -59,7 +59,7 @@
                 </li>
                 
                 
-                <li class="nav-item active">
+                <li class="nav-item">
                 
                 <a class="nav-link" href="/about">About</a>
                 </li>
@@ -114,60 +114,109 @@
 <div class="main-content">
     <section>
     <div class="section-title">
-        <h2><span>Ahmed MAHI - Consultant Technique web, e-commerce et mobile</span></h2>
+        <h2><span>Mediumish Template for Jekyll</span></h2>
     </div>
     
     <div class="article-post">
-    <h3 id="développeur-fullstack">Développeur FullStack.</h3>
+    <p>This website is built with Jekyll and Mediumish template for Jekyll. It is meant for demonstration purposes, no real content can be found. Mediumish template for Jekyll is compatible with Github pages, in fact even this demo is created with Github Pages and hosted with Github. This page in example shows a page layout.</p>
+
+<p><img src="/assets/images/mediumish-jekyll-template.png" alt="jekyll template mediumish" class="shadow" /></p>
+
+<h3 id="features">Features</h3>
 
 <ul>
-  <li>
-    <p>E-commerce :</p>
-
-    <p>Développeur Magento depuis 2009 donc environ 10 ans d’expérience.</p>
+  <li>Built for Jekyll</li>
+  <li>Compatible with Github pages</li>
+  <li>Featured Posts</li>
+  <li>Index Pagination</li>
+  <li>Post Share</li>
+  <li>Post Categories</li>
+  <li>Prev/Next Link</li>
+  <li>Category Archives (this is not yet compatible with github pages though)</li>
+  <li>Jumbotron Categories</li>
+  <li>Integrations:
+    <ul>
+      <li>Disqus Comments</li>
+      <li>Google Analaytics</li>
+      <li>Mailchimp Integration</li>
+    </ul>
   </li>
-  <li>
-    <p>Transport / Logistique:</p>
-
-    <p>J’ai développé from scratch, et participer a des plateformes de Livraisons- Logistique (Backend/Frontend - Mobile - Api )
-  J’ai travaillé sur des problématiques de géolocalisation, gestion et optimisation des tournées, récupération automatique des colis, scan code-barre, preuve de livraison…
-  J’ai développé des modules de livraison pour les principaux outils e-commerce: Magento, Woocommerce, Prestashop pour au moins 3 transporteurs…</p>
-
-    <p>Contrainte principale : Utilisation uniquement des outils Open source :)
-  ( Laravel - React Native - Magento - Woocommerce - Prestashop…)</p>
+  <li>Design Features:
+    <ul>
+      <li>Bootstrap v4.x</li>
+      <li>Font Awesome</li>
+      <li>Masonry</li>
+    </ul>
   </li>
-  <li>
-    <p>Mobile:</p>
-
-    <p>J’utilise React Native pour réaliser des applications mobile Android et iOS.</p>
-  </li>
-  <li>
-    <p>Web:</p>
-
-    <p>Depuis 2005 j’utilise Php/Mysql, je travail avec des framework tel que Zend et Laravel et dernièrement j’ai commencer NodeJS pour des applications rapides : Apis REST , temps réel – socket.io…</p>
-  </li>
-  <li>
-    <p>DevOps:</p>
-
-    <p>Lamp, Git, Docker,GitLab, GitHub</p>
-  </li>
-  <li>
-    <p>Mon Stack:</p>
-
-    <p>PHP/MySQL , Zend, Magento, Laravel, HTML, CSS, jQuery, Prototype, NodeJs, React, React Native, WooCommerce, Prestashop. restfull, soap, Atom, git, Docker, Ubuntu, Gnome Planner, Dia, Visual studio code, github, gitlab, Administration serveur (LAMP), aws, DigitalOcean…</p>
+  <li>Layouts:
+    <ul>
+      <li>Default</li>
+      <li>Post</li>
+      <li>Page</li>
+      <li>Archive</li>
+    </ul>
   </li>
 </ul>
 
-<h3 id="dépôt-du-blog">Dépôt du blog.</h3>
+<h3 id="how-to-use">How to Use</h3>
 
-<p>Le blog est propulsé par Jekyll basé sur le template <a href="https://github.com/wowthemesnet/mediumish-theme-jekyll">Mediumish</a> , hébergé chez <a href="https://www.netlify.com/">Netlify</a> géré par moi-même.</p>
+<p>If you aren’t familiar with Jekyll yet, you should know that it is a static site generator. It will transform your plain text into static websites and blogs. No more databases, slow loading websites, risk of being hacked…just your content. And not only that, with Jekyll you get free hosting with GitHub Pages! This page itself is free hosted on Github with the help of Jekyll and Mediumish template that you’re currently previewing. If you are a beginner we recommend you start with <a href="https://jekyllrb.com/docs/installation/" target="_blank">Jekyll’s Docs</a>. Now if you know how to use Jekyll, let’s move on to using Mediumish template in Jekyll:</p>
 
-<p>Le code source du blog  est public chez  <a href="https://github.com/ahmedmahi/blog">Github</a> .</p>
+<h4 id="using-mediumish">Using Mediumish</h4>
 
-<h3 id="contact">Contact.</h3>
+<p>Download or Fork <em>Mediumish for Jekyll</em>.</p>
+<ul>
+  <li>In your local project, open <code>_config.yml</code>. If your site is in root, for <code>baseurl</code>, make sure this is set to <code>baseurl: /</code>. Also, change your Google Analytics code, disqus username, authors, Mailchimp list etc.</li>
+  <li>Mediumish requires 2 plugins:
+    <ul>
+      <li><code>$ gem install jekyll-paginate</code></li>
+      <li><code>$ gem install jekyll-archives</code>.</li>
+    </ul>
+  </li>
+  <li>Edit the menu and footer copyrights in <code>default.html</code></li>
+  <li>Start by adding your .md files in <code>_posts</code>. Mediumish already has a few as an example.</li>
+  <li>YAML front matter
+    <ul>
+      <li>featured post - <code>featured:true</code></li>
+      <li>exclude featured post from “All stories” loop to avoid duplicated posts - <code>hidden:true</code></li>
+      <li>post image - <code>image: assets/images/mypic.jpg</code></li>
+      <li>external post image - <code>image: "https://externalwebsite.com/image4.jpg" </code></li>
+      <li>page comments - <code>comments:true</code></li>
+      <li>meta description (optional) - <code>description: "this is my meta description"</code></li>
+    </ul>
+  </li>
+</ul>
 
-<p><a href="https://mahi.ma">mahi.ma</a>.</p>
+<p>YAML Post Example:</p>
+<pre>
+---
+layout: post
+title:  "We all wait for summer"
+author: john
+categories: [ Jekyll, tutorial ]
+image: assets/images/5.jpg
+featured: true
+---
+</pre>
 
+<p>YAML Page Example</p>
+<pre>
+---
+layout: page
+title: Mediumish Template for Jekyll
+comments: true
+---
+</pre>
+
+<h4 id="contribute">Contribute</h4>
+
+<ul>
+  <li><a href="https://github.com/wowthemesnet/mediumish-theme-jekyll">Clone the repo</a>.</li>
+  <li>Create a branch off of master and give it a meaningful name (e.g. my-new-mediumish-feature).</li>
+  <li>Open a pull request on GitHub and describe the feature or fix.</li>
+</ul>
+
+<p><a href="https://www.buymeacoffee.com/sal" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" /></a></p>
 
     </div>
     
